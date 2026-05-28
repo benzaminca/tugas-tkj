@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Benzamin Cahya Alfatah</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Website Pribadi - Benzamin Cahya Alfatah</title>
 
   <style>
     *{
@@ -13,45 +13,49 @@
       font-family:Arial, Helvetica, sans-serif;
     }
 
-    body{
-      background: linear-gradient(to bottom,#dff6ff,#f8fcff);
-      overflow-x:hidden;
-      color:#1f2937;
+    html{
+      scroll-behavior:smooth;
     }
 
-    /* AWAN ANIMASI */
+    body{
+      min-height:100vh;
+      background: linear-gradient(to bottom, #dff3ff, #f8fcff);
+      color:#1f2937;
+      overflow-x:hidden;
+    }
 
+    /* AWAN */
     .cloud{
-      position:absolute;
-      background:white;
+      position:fixed;
+      background:#fff;
       border-radius:100px;
-      opacity:.7;
+      opacity:.75;
       filter:blur(1px);
       animation: moveCloud 35s linear infinite;
+      z-index:0;
+      pointer-events:none;
     }
 
     .cloud::before,
     .cloud::after{
       content:"";
       position:absolute;
-      background:white;
+      background:#fff;
       border-radius:50%;
     }
 
     .cloud1{
       width:180px;
       height:60px;
-      top:80px;
-      left:-250px;
+      top:70px;
+      left:-260px;
     }
-
     .cloud1::before{
       width:80px;
       height:80px;
       top:-35px;
       left:25px;
     }
-
     .cloud1::after{
       width:90px;
       height:90px;
@@ -65,15 +69,14 @@
       top:220px;
       left:-300px;
       animation-duration:50s;
+      opacity:.55;
     }
-
     .cloud2::before{
       width:90px;
       height:90px;
       top:-35px;
       left:30px;
     }
-
     .cloud2::after{
       width:110px;
       height:110px;
@@ -82,37 +85,37 @@
     }
 
     @keyframes moveCloud{
-      from{
-        transform:translateX(0);
-      }
-      to{
-        transform:translateX(140vw);
-      }
+      from{ transform: translateX(0); }
+      to{ transform: translateX(140vw); }
     }
 
     /* NAVBAR */
-
     nav{
       position:fixed;
-      width:100%;
       top:0;
+      left:0;
+      width:100%;
       z-index:1000;
-      backdrop-filter:blur(12px);
-      background:rgba(255,255,255,.3);
-      padding:15px 8%;
+      backdrop-filter: blur(12px);
+      background: rgba(255,255,255,.35);
+      border-bottom:1px solid rgba(255,255,255,.5);
+      padding:14px 8%;
       display:flex;
       justify-content:space-between;
       align-items:center;
+      flex-wrap:wrap;
     }
 
     nav h2{
       color:#2563eb;
+      font-size:22px;
     }
 
     nav ul{
-      display:flex;
-      gap:20px;
       list-style:none;
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
     }
 
     nav a{
@@ -127,16 +130,16 @@
     }
 
     /* HERO */
-
     .hero{
       min-height:100vh;
+      padding:120px 8% 70px;
       display:flex;
-      justify-content:center;
       align-items:center;
-      padding:120px 8% 60px;
-      gap:50px;
+      justify-content:center;
+      gap:45px;
       flex-wrap:wrap;
       position:relative;
+      z-index:1;
     }
 
     .hero-text{
@@ -145,78 +148,78 @@
     }
 
     .welcome{
-      font-size:20px;
-      color:#2563eb;
+      font-size:18px;
       font-weight:bold;
-      margin-bottom:20px;
+      color:#2563eb;
+      margin-bottom:18px;
       animation: glow 2s infinite alternate;
+      letter-spacing:2px;
     }
 
     @keyframes glow{
       from{
+        opacity:.65;
         letter-spacing:2px;
-        opacity:.7;
       }
       to{
-        letter-spacing:6px;
         opacity:1;
+        letter-spacing:6px;
       }
     }
 
     .hero h1{
-      font-size:55px;
-      line-height:1.1;
-      margin-bottom:20px;
+      font-size:56px;
+      line-height:1.05;
+      margin-bottom:18px;
+      color:#16324f;
     }
 
     .hero p{
+      font-size:17px;
+      line-height:1.8;
       color:#4b5563;
-      margin-bottom:30px;
-      line-height:1.7;
+      margin-bottom:24px;
+      max-width:650px;
     }
-
-    /* TOMBOL WAH */
 
     .buttons{
       display:flex;
-      gap:20px;
+      gap:14px;
       flex-wrap:wrap;
     }
 
     .btn{
       position:relative;
-      padding:15px 30px;
-      border:none;
-      border-radius:50px;
-      cursor:pointer;
-      overflow:hidden;
-      font-size:16px;
-      font-weight:bold;
-      transition:.4s;
+      display:inline-block;
       text-decoration:none;
+      padding:14px 26px;
+      border-radius:999px;
+      font-weight:bold;
+      overflow:hidden;
+      transition:.4s;
     }
 
     .btn-primary{
       background:linear-gradient(45deg,#2563eb,#60a5fa);
       color:white;
-      box-shadow:0 10px 20px rgba(37,99,235,.3);
+      box-shadow:0 10px 20px rgba(37,99,235,.28);
     }
 
     .btn-primary:hover{
-      transform:translateY(-5px) scale(1.05);
-      box-shadow:0 20px 30px rgba(37,99,235,.4);
+      transform:translateY(-4px) scale(1.04);
+      box-shadow:0 16px 26px rgba(37,99,235,.38);
     }
 
     .btn-primary::before{
       content:"";
       position:absolute;
+      top:-60%;
+      left:-90px;
       width:50px;
-      height:200%;
-      background:rgba(255,255,255,.5);
-      top:-50%;
-      left:-80px;
+      height:220%;
+      background:rgba(255,255,255,.55);
       transform:rotate(25deg);
-      transition:.6s;
+      transition:.7s;
     }
 
     .btn-primary:hover::before{
@@ -224,7 +227,7 @@
     }
 
     .btn-secondary{
-      background:white;
+      background:#fff;
       color:#2563eb;
       border:2px solid #2563eb;
     }
@@ -232,258 +235,389 @@
     .btn-secondary:hover{
       background:#2563eb;
       color:white;
-      transform:translateY(-5px);
+      transform:translateY(-4px);
     }
 
-    /* FOTO */
-
-    .profile{
+    /* FOTO PROFIL */
+    .profile-box{
       flex:1;
+      min-width:280px;
       display:flex;
       justify-content:center;
-      min-width:300px;
+      align-items:center;
     }
 
-    .profile img{
-      width:330px;
-      height:430px;
+    .profile-card{
+      background:rgba(255,255,255,.55);
+      backdrop-filter:blur(12px);
+      border:1px solid rgba(255,255,255,.7);
+      border-radius:28px;
+      padding:22px;
+      box-shadow:0 20px 40px rgba(0,0,0,.10);
+      text-align:center;
+    }
+
+    .profile-card img{
+      width:320px;
+      height:420px;
       object-fit:cover;
-      border-radius:30px;
+      border-radius:24px;
       border:6px solid white;
-      box-shadow:0 20px 40px rgba(0,0,0,.15);
+      box-shadow:0 14px 30px rgba(0,0,0,.16);
       animation: float 4s ease-in-out infinite;
     }
 
     @keyframes float{
-      0%{
-        transform:translateY(0);
-      }
-      50%{
-        transform:translateY(-15px);
-      }
-      100%{
-        transform:translateY(0);
-      }
+      0%{ transform:translateY(0); }
+      50%{ transform:translateY(-12px); }
+      100%{ transform:translateY(0); }
+    }
+
+    .profile-name{
+      margin-top:14px;
+      font-size:20px;
+      font-weight:bold;
+      color:#16324f;
+    }
+
+    .profile-role{
+      color:#6b7280;
+      margin-top:6px;
     }
 
     /* SECTION */
-
     section{
-      padding:100px 8%;
+      padding:90px 8%;
+      position:relative;
+      z-index:1;
     }
 
     .title{
       text-align:center;
-      margin-bottom:50px;
+      margin-bottom:38px;
     }
 
     .title h2{
       font-size:40px;
-      margin-bottom:10px;
       color:#2563eb;
+      margin-bottom:8px;
+    }
+
+    .title p{
+      color:#6b7280;
     }
 
     .cards{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:25px;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:22px;
     }
 
     .card{
-      background:rgba(255,255,255,.5);
+      background:rgba(255,255,255,.55);
       backdrop-filter:blur(10px);
-      border-radius:25px;
-      padding:25px;
-      transition:.4s;
-      box-shadow:0 10px 20px rgba(0,0,0,.08);
+      border:1px solid rgba(255,255,255,.75);
+      border-radius:24px;
+      padding:24px;
+      box-shadow:0 10px 22px rgba(0,0,0,.08);
+      transition:.35s;
     }
 
     .card:hover{
-      transform:translateY(-10px);
-      box-shadow:0 20px 30px rgba(0,0,0,.1);
+      transform:translateY(-8px);
+      box-shadow:0 18px 30px rgba(0,0,0,.12);
     }
 
     .card h3{
-      margin-bottom:15px;
       color:#2563eb;
+      margin-bottom:14px;
+      font-size:22px;
     }
 
-    .card p{
+    .card p,
+    .card li{
       line-height:1.8;
       color:#374151;
+      font-size:16px;
+    }
+
+    .list{
+      list-style:none;
+    }
+
+    .list li{
+      padding:10px 12px;
+      background:rgba(255,255,255,.7);
+      border-radius:14px;
+      margin-bottom:10px;
+    }
+
+    /* GALERI */
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:18px;
+    }
+
+    .gallery .card{
+      padding:0;
+      overflow:hidden;
+    }
+
+    .gallery img{
+      width:100%;
+      height:250px;
+      object-fit:cover;
+      display:block;
+    }
+
+    .caption{
+      padding:14px 16px 16px;
+      color:#6b7280;
     }
 
     /* KONTAK */
-
-    .contact{
-      text-align:center;
-    }
-
     .contact p{
-      margin:15px 0;
-      font-size:18px;
+      margin-bottom:12px;
+      font-size:17px;
     }
 
-    /* FOOTER */
+    /* FORM REGISTRASI */
+    form{
+      display:grid;
+      gap:14px;
+    }
+
+    label{
+      display:block;
+      margin-bottom:6px;
+      font-weight:bold;
+      color:#27415c;
+    }
+
+    input{
+      width:100%;
+      padding:13px 14px;
+      border:1px solid rgba(118,149,182,.35);
+      border-radius:14px;
+      outline:none;
+      font:inherit;
+      background:rgba(255,255,255,.9);
+    }
+
+    input:focus{
+      border-color:#2563eb;
+      box-shadow:0 0 0 4px rgba(37,99,235,.12);
+    }
+
+    button{
+      border:none;
+      border-radius:14px;
+      padding:13px 18px;
+      font:inherit;
+      font-weight:bold;
+      color:white;
+      background:linear-gradient(45deg,#2563eb,#60a5fa);
+      cursor:pointer;
+      transition:.3s;
+      width:fit-content;
+    }
+
+    button:hover{
+      transform:translateY(-3px);
+      box-shadow:0 10px 20px rgba(37,99,235,.26);
+    }
+
+    .note{
+      margin-top:12px;
+      color:#6b7280;
+      font-size:14px;
+    }
 
     footer{
       text-align:center;
-      padding:30px;
-      background:rgba(255,255,255,.4);
-      backdrop-filter:blur(10px);
-      margin-top:50px;
+      padding:28px 12px 36px;
+      color:#5b6b7b;
+      position:relative;
+      z-index:1;
     }
 
-    /* RESPONSIVE */
-
-    @media(max-width:768px){
-
+    @media (max-width: 768px){
       .hero h1{
         font-size:40px;
       }
 
-      nav{
-        flex-direction:column;
-        gap:15px;
-      }
-
-      nav ul{
-        flex-wrap:wrap;
-        justify-content:center;
-      }
-
-      .profile img{
+      .profile-card img{
         width:280px;
         height:360px;
       }
-    }
 
+      nav{
+        justify-content:center;
+        gap:10px;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <!-- AWAN -->
   <div class="cloud cloud1"></div>
   <div class="cloud cloud2"></div>
 
-  <!-- NAVBAR -->
   <nav>
     <h2>Benzamin</h2>
-
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#cv">CV</a></li>
+      <li><a href="#gambar">Gambar</a></li>
       <li><a href="#kontak">Kontak</a></li>
+      <li><a href="#registrasi">Registrasi</a></li>
     </ul>
   </nav>
 
-  <!-- HERO -->
   <section class="hero" id="home">
-
     <div class="hero-text">
-
-      <div class="welcome">
-        ✦ WELCOME TO MY WEBSITE ✦
-      </div>
-
-      <h1>
-        Benzamin <br>
-        Cahya Alfatah
-      </h1>
-
+      <div class="welcome">✦ WELCOME TO MY WEBSITE ✦</div>
+      <h1>Benzamin<br />Cahya Alfatah</h1>
       <p>
-        Halo semuanya, saya siswa kelas 11 TKJ 2 dari SMKN 3 Bogor.
-        Saya suka membaca novel fiksi maupun non-fiksi dan juga memasak.
-        Website ini dibuat dengan tema langit dan awan agar terlihat estetik,
-        modern, dan nyaman dilihat.
+        Halo, saya siswa kelas 11 TKJ 2 dari SMKN 3 Bogor. Saya suka membaca novel fiksi
+        maupun non-fiksi serta memasak.
       </p>
 
       <div class="buttons">
-        <a href="#cv" class="btn btn-primary">
-          Lihat CV
-        </a>
-
-        <a href="#kontak" class="btn btn-secondary">
-          Hubungi Saya
-        </a>
+        <a href="#cv" class="btn btn-primary">Lihat CV</a>
+        <a href="#kontak" class="btn btn-secondary">Hubungi Saya</a>
       </div>
-
     </div>
 
-    <div class="profile">
-      <img src="profile.jpg" alt="Foto Profil">
+    <div class="profile-box">
+      <div class="profile-card">
+        <img src="profile.jpg" alt="Foto profil Benzamin Cahya Alfatah">
+        <div class="profile-name">Benzamin Cahya Alfatah</div>
+        <div class="profile-role">Siswa TKJ • Bogor</div>
+      </div>
     </div>
-
   </section>
 
-  <!-- CV -->
   <section id="cv">
-
     <div class="title">
       <h2>Curriculum Vitae</h2>
-      <p>Informasi tentang diri saya</p>
+      <p>Informasi singkat tentang diri saya</p>
     </div>
 
     <div class="cards">
-
       <div class="card">
         <h3>Data Diri</h3>
-
-        <p>
-          Nama : Benzamin Cahya Alfatah <br>
-          Kelas : 11 TKJ 2 <br>
-          Sekolah : SMKN 3 Bogor <br>
-          Kota : Bogor
-        </p>
+        <ul class="list">
+          <li><strong>Nama:</strong> Benzamin Cahya Alfatah</li>
+          <li><strong>Kelas:</strong> 11 TKJ 2</li>
+          <li><strong>Sekolah:</strong> SMKN 3 Bogor</li>
+          <li><strong>Kota:</strong> Bogor</li>
+        </ul>
       </div>
 
       <div class="card">
         <h3>Hobi</h3>
-
-        <p>
-          • Membaca novel fiksi <br>
-          • Membaca novel non-fiksi <br>
-          • Memasak
-        </p>
+        <ul class="list">
+          <li>Membaca novel fiksi</li>
+          <li>Membaca novel non-fiksi</li>
+          <li>Memasak</li>
+        </ul>
       </div>
 
       <div class="card">
         <h3>Keahlian</h3>
-
-        <p>
-          • Dasar komputer <br>
-          • Canva <br>
-          • HTML dasar <br>
-          • GitHub dasar
-        </p>
+        <ul class="list">
+          <li>Dasar komputer</li>
+          <li>Menggunakan Canva</li>
+          <li>HTML dasar</li>
+          <li>GitHub dasar</li>
+        </ul>
       </div>
-
     </div>
-
   </section>
 
-  <!-- KONTAK -->
-  <section id="kontak">
-
+  <section id="gambar">
     <div class="title">
-      <h2>Kontak Saya</h2>
+      <h2>Gambar</h2>
+      <p>Bagian ini bisa dipakai untuk foto profil dan gambar pendukung</p>
+    </div>
+
+    <div class="gallery">
+      <div class="card">
+        <img src="profile.jpg" alt="Foto profil utama">
+        <div class="caption">Foto profil utama</div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80" alt="Awan dan langit">
+        <div class="caption">Nuansa langit dan awan</div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80" alt="Belajar komputer">
+        <div class="caption">Belajar teknologi dan desain</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontak">
+    <div class="title">
+      <h2>Kontak</h2>
       <p>Silakan hubungi saya melalui kontak berikut</p>
     </div>
 
     <div class="card contact">
+      <p><strong>Email:</strong> benzamin2@gmail.com</p>
+      <p><strong>No Telepon:</strong> 083142497335</p>
+      <p><strong>Kota:</strong> Bogor</p>
+    </div>
+  </section>
 
-      <p><b>Email :</b> benzamin2@gmail.com</p>
-
-      <p><b>No Telepon :</b> 083142497335</p>
-
-      <p><b>Kota :</b> Bogor</p>
-
+  <section id="registrasi">
+    <div class="title">
+      <h2>Registrasi</h2>
+      <p>Form registrasi sederhana untuk tampilan website</p>
     </div>
 
+    <div class="card">
+      <form>
+        <div>
+          <label for="nama">Nama Lengkap</label>
+          <input type="text" id="nama" placeholder="Masukkan nama lengkap">
+        </div>
+
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Masukkan email">
+        </div>
+
+        <div>
+          <label for="hp">No Telepon</label>
+          <input type="tel" id="hp" placeholder="Masukkan nomor telepon">
+        </div>
+
+        <div>
+          <label for="username">Username</label>
+          <input type="text" id="username" placeholder="Buat username">
+        </div>
+
+        <div>
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Buat password">
+        </div>
+
+        <button type="button">Daftar Sekarang</button>
+      </form>
+
+      <div class="note">
+        Form ini hanya tampilan demo dan belum tersambung ke database.
+      </div>
+    </div>
   </section>
 
   <footer>
-    © 2026 - Website Estetik Benzamin Cahya Alfatah
+    © 2026 - Website Pribadi Benzamin Cahya Alfatah
   </footer>
 
 </body>
